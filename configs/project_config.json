@@ -1,0 +1,18 @@
+{
+  "src": {
+    "core": {
+      "utils": ["__init__.py", "helpers.py", "validators.py"],
+      "models": ["__init__.py", "base_model.py"]
+    },
+    "api": {
+      "routes": ["__init__.py", "user_routes.py", "auth_routes.py"]
+    }
+  },
+  "tests": {
+    "unit": {
+      "core": ["test_helpers.py", "test_validators.py"],
+      "api": ["test_user_routes.py", "test_auth_routes.py"]
+    }
+  },
+  "docs": ["README.md", "API.md"]
+}
