@@ -2,8 +2,8 @@ import argparse
 import sys
 from pathlib import Path
 
-from project_structure_generator.project_structure_generator import ProjectStructureCreator
-from project_structure_generator.logger_setup import setup_logger
+from .project_structure_generator import ProjectStructureCreator
+from .logger_setup import setup_logger
 from project_structure_generator import get_default_config_path
 
 
