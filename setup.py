@@ -3,16 +3,15 @@ from setuptools import setup, find_packages
 setup(
     name='project-structure-creator',
     version='0.1.0',
-    packages=find_packages(where='src'),
-    # package_dir={'': 'src'},
+    packages=find_packages(),  # Remove 'where' argument
     include_package_data=True,
     install_requires=[],
     entry_points={
-    'console_scripts': [
-        'project-creator=project_structure_creator.main:main',
-    ]
+        'console_scripts': [
+            'project-creator=project_structure_creator.main:main',
+        ]
     },
-    author='Momchil Antonov ',
+    author='Momchil Antonov',
     author_email='eng.antonov@gmail.com',
     description='A utility for creating project structures from JSON configurations',
     long_description=open('README.md').read(),
