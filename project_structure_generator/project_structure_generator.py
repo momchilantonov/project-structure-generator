@@ -3,16 +3,16 @@ from pathlib import Path
 from typing import Dict, Union, Optional, Any
 import logging
 
-class ProjectStructureCreator:
+class ProjectStructureGenerator:
     """
-    A class to create project structures based on JSON configuration.
+    A class to generate project structures based on JSON configuration.
     """
 
     def __init__(self,
                  base_path: Union[str, Path] = Path.cwd(),
                  logger: Optional[logging.Logger] = None):
         """
-        Initialize ProjectStructureCreator.
+        Initialize ProjectStructureGenerator.
 
         Args:
             base_path (Union[str, Path]): Base directory for project creation
@@ -20,7 +20,7 @@ class ProjectStructureCreator:
         """
         # Create logger if not provided
         if logger is None:
-            logger = logging.getLogger('project_creator')
+            logger = logging.getLogger('project_generator')
             logger.setLevel(logging.INFO)
 
             # Console handler
@@ -41,7 +41,7 @@ class ProjectStructureCreator:
 
     def _create_item(self, item_path: Path, item_content: Union[str, list, dict]) -> None:
         """
-        Create a file or directory based on the item type.
+        Generate a file or directory based on the item type.
 
         Args:
             item_path (Path): Path to the item to be created
@@ -59,7 +59,7 @@ class ProjectStructureCreator:
                     for filename in item_content:
                         file_path = item_path / filename
                         file_path.touch(exist_ok=True)
-                        self.logger.info(f"Created file: {file_path}")
+                        self.logger.info(f"Generated file: {file_path}")
 
                 elif isinstance(item_content, dict):
                     # Nested directory structure
@@ -73,17 +73,17 @@ class ProjectStructureCreator:
                 # If content is provided, write it
                 if item_content:
                     item_path.write_text(item_content)
-                self.logger.info(f"Created file: {item_path}")
+                self.logger.info(f"Generated file: {item_path}")
 
             else:
                 self.logger.warning(f"Unexpected content type for {item_path}: {type(item_content)}")
 
         except Exception as e:
-            self.logger.error(f"Error creating {item_path}: {e}")
+            self.logger.error(f"Error generating {item_path}: {e}")
 
     def create_structure(self, structure: Dict[str, Any]) -> None:
         """
-        Create project structure from configuration.
+        Generate project structure from configuration.
 
         Args:
             structure (Dict): Project structure configuration
@@ -102,21 +102,21 @@ class ProjectStructureCreator:
                 self._create_item(current_path, contents)
 
         except Exception as e:
-            self.logger.error(f"Error creating project structure: {e}")
+            self.logger.error(f"Error generating project structure: {e}")
 
     @classmethod
     def create_from_config(cls,
                            config_file: Union[str, Path],
-                           base_path: Union[str, Path] = Path.cwd()) -> 'ProjectStructureCreator':
+                           base_path: Union[str, Path] = Path.cwd()) -> 'ProjectStructureGenerator':
         """
-        Create project structure from a JSON configuration file.
+        Generate project structure from a JSON configuration file.
 
         Args:
             config_file (Union[str, Path]): Path to config file
             base_path (Union[str, Path]): Base directory for project creation
 
         Returns:
-            ProjectStructureCreator: Initialized instance with created structure
+            ProjectStructureGenerator: Initialized instance with created structure
         """
         # Create an instance
         creator = cls(base_path)

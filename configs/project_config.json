@@ -1,18 +1,24 @@
 {
   "src": {
-    "core": {
-      "utils": ["__init__.py", "helpers.py", "validators.py"],
-      "models": ["__init__.py", "base_model.py"]
-    },
-    "api": {
-      "routes": ["__init__.py", "user_routes.py", "auth_routes.py"]
-    }
+    "__init__.py": "",
+    "app.py": "",
+    "models": ["__init__.py"],
+    "routes": ["__init__.py"]
   },
+  "handlers": ["__init__.py"],
+  "helpers": ["__init__.py"],
+  "utils": ["__init__.py"],
   "tests": {
-    "unit": {
-      "core": ["test_helpers.py", "test_validators.py"],
-      "api": ["test_user_routes.py", "test_auth_routes.py"]
-    }
+    "__init__.py": "",
+    "cofigtest.py": "",
+    "unit_tests": ["__init__.py"],
+    "integration_tests": ["__init__.py"]
   },
-  "docs": ["README.md", "API.md"]
+  "logs": [],
+  "docs": [],
+  "__init__.py": "",
+  "setup.py": "",
+  "requirements.txt": "",
+  "README.md": "",
+  ".gitignore": ""
 }

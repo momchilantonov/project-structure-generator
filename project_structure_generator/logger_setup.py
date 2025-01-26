@@ -32,7 +32,7 @@ def setup_logger(log_level: str = 'INFO') -> logging.Logger:
     console_handler.setFormatter(console_format)
 
     # File Handler
-    log_file = logs_dir / 'project_creator.log'
+    log_file = logs_dir / 'project_generator.log'
     file_handler = logging.FileHandler(log_file)
     file_handler.setLevel(getattr(logging, log_level.upper()))
     file_format = logging.Formatter(

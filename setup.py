@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 from setuptools import setup, find_packages
 
 setup(
-    name='project-structure-creator',
+    name='project-structure-generator',
     version='0.1.0',
     packages=find_packages(),
     include_package_data=True,
@@ -12,7 +12,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'project-creator=project_structure_creator.main:main',
+            'project-generator=project_structure_generator.main:main',
         ]
     },
     author='Momchil Antonov',

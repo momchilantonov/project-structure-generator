@@ -2,17 +2,17 @@ import argparse
 import sys
 from pathlib import Path
 
-# Use absolute imports from project_structure_creator
-from project_structure_creator.project_structure_creator import ProjectStructureCreator
-from project_structure_creator.logger_setup import setup_logger
-from project_structure_creator import get_default_config_path
+from project_structure_generator.project_structure_generator import ProjectStructureCreator
+from project_structure_generator.logger_setup import setup_logger
+from project_structure_generator import get_default_config_path
+
 
 def create_project_cli():
     """
     Command-line interface for project structure creation.
     """
     # Create argument parser
-    parser = argparse.ArgumentParser(description='Create project structure from JSON configurations.')
+    parser = argparse.ArgumentParser(description='Generate project structure from JSON configurations.')
 
     # Mutually exclusive group for config selection
     config_group = parser.add_mutually_exclusive_group(required=True)
@@ -65,10 +65,10 @@ def create_project_cli():
             base_path=project_path
         )
 
-        logger.info(f"Project structure created successfully in {project_path}")
+        logger.info(f"Project structure generated successfully in {project_path}")
 
     except Exception as e:
-        logger.error(f"Failed to create project structure: {e}")
+        logger.error(f"Failed to generate project structure: {e}")
         sys.exit(1)
 
 def main():
