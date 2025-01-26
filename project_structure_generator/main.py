@@ -2,8 +2,8 @@ import argparse
 import sys
 from pathlib import Path
 
-from .project_structure_generator.project_structure_generator import ProjectStructureCreator
-from .project_structure_generator.logger_setup import setup_logger
+from project_structure_generator.project_structure_generator import ProjectStructureGenerator
+from project_structure_generator.logger_setup import setup_logger
 from project_structure_generator import get_default_config_path
 
 
@@ -60,7 +60,7 @@ def create_project_cli():
         project_path.mkdir(parents=True, exist_ok=True)
 
         # Create project structure
-        ProjectStructureCreator.create_from_config(
+        ProjectStructureGenerator.create_from_config(
             config_file=config_file,
             base_path=project_path
         )
