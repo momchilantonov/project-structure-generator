@@ -1,0 +1,2 @@
+include configs/project_config.json
+recursive-include configs *.json

@@ -8,9 +8,9 @@ setup(
     include_package_data=True,
     install_requires=[],
     entry_points={
-        'console_scripts': [
-            'project-creator=src.main:main',
-        ],
+    'console_scripts': [
+        'project-creator=project_structure_creator.main:main',
+    ]
     },
     author='Momchil Antonov ',
     author_email='eng.antonov@gmail.com',

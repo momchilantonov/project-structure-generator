@@ -3,8 +3,8 @@ import sys
 from pathlib import Path
 
 # Use absolute imports from src
-from src.project_structure_creator import ProjectStructureCreator
-from src.logger_setup import setup_logger
+from project_structure_creator.project_structure_creator import ProjectStructureCreator
+from project_structure_creator.logger_setup import setup_logger
 
 def create_project_cli():
     """
