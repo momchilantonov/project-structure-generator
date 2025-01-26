@@ -5,9 +5,11 @@
     "models": ["__init__.py"],
     "routes": ["__init__.py"]
   },
-  "handlers": ["__init__.py"],
-  "helpers": ["__init__.py"],
-  "utils": ["__init__.py"],
+  "utils": {
+    "__init__.py": "",
+    "handlers": ["__init__.py"],
+    "helpers": ["__init__.py"]
+  },
   "tests": {
     "__init__.py": "",
     "cofigtest.py": "",
@@ -17,6 +19,7 @@
   "logs": [],
   "docs": [],
   "__init__.py": "",
+  "main.py": "",
   "setup.py": "",
   "requirements.txt": "",
   "README.md": "",
