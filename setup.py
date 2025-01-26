@@ -8,7 +8,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     package_data={
-        'project_structure_creator': ['../configs/project_config.json'],
+        'project_structure_generator': ['../configs/project_config.json'],
     },
     entry_points={
         'console_scripts': [
@@ -17,7 +17,7 @@ setup(
     },
     author='Momchil Antonov',
     author_email='eng.antonov@gmail.com',
-    description='A utility for creating project structures from JSON configurations',
+    description='A utility for generating project structures from JSON configurations',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/momchilantonov/project-structure-generator.git',
