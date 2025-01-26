@@ -1,18 +1,26 @@
 import argparse
 import sys
 from pathlib import Path
+import pkg_resources
 
-# Use absolute imports from src
+# Use absolute imports from project_structure_creator
 from project_structure_creator.project_structure_creator import ProjectStructureCreator
 from project_structure_creator.logger_setup import setup_logger
+
+def get_default_config_path():
+    """
+    Get the path to the default configuration file.
+
+    Returns:
+        Path: Path to the default project configuration JSON
+    """
+    return Path(pkg_resources.resource_filename('project_structure_creator',
+                                               '../configs/project_config.json'))
 
 def create_project_cli():
     """
     Command-line interface for project structure creation.
     """
-    # Determine the configs directory relative to the script location
-    configs_dir = Path(__file__).resolve().parent.parent / 'configs'
-
     # Create argument parser
     parser = argparse.ArgumentParser(description='Create project structure from JSON configurations.')
 
@@ -43,7 +51,7 @@ def create_project_cli():
         # Determine config file and path
         if args.default is not None:
             # Default config
-            config_file = configs_dir / 'project_config.json'
+            config_file = get_default_config_path()
             project_path = args.default
         else:
             # Custom config

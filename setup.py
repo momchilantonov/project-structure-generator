@@ -5,6 +5,7 @@ setup(
     version='0.1.0',
     packages=find_packages(),  # Remove 'where' argument
     include_package_data=True,
+    package_data={'': ['configs/*.json']},
     install_requires=[],
     entry_points={
         'console_scripts': [
