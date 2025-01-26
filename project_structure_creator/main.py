@@ -1,21 +1,11 @@
 import argparse
 import sys
 from pathlib import Path
-import pkg_resources
 
 # Use absolute imports from project_structure_creator
 from project_structure_creator.project_structure_creator import ProjectStructureCreator
 from project_structure_creator.logger_setup import setup_logger
-
-def get_default_config_path():
-    """
-    Get the path to the default configuration file.
-
-    Returns:
-        Path: Path to the default project configuration JSON
-    """
-    return Path(pkg_resources.resource_filename('project_structure_creator',
-                                               '../configs/project_config.json'))
+from project_structure_creator import get_default_config_path
 
 def create_project_cli():
     """
